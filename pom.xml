@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <name>CoERA Keycloak Extension</name>
+    <version>1.0.0</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>au.org.coesra.keycloak</groupId>
+    <artifactId>coesra-keycloak-extension</artifactId>
+    <packaging>jar</packaging>
+
+    <properties>
+        <keycloak.version>4.5.0.Final</keycloak.version>
+        <outputDirectory>${project.build.directory}</outputDirectory>
+	<maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-core</artifactId>
+            <scope>provided</scope>
+            <version>${keycloak.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-server-spi</artifactId>
+            <scope>provided</scope>
+            <version>${keycloak.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-services</artifactId>
+            <scope>provided</scope>
+            <version>${keycloak.version}</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.keycloak</groupId>
+		    <artifactId>keycloak-server-spi-private</artifactId>
+		    <version>${keycloak.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.keycloak</groupId>
+		    <artifactId>keycloak-ldap-federation</artifactId>
+		    <version>${keycloak.version}</version>
+		</dependency>
+		
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+	                <archive>
+			           <manifestEntries>
+			               <Dependencies>org.keycloak.keycloak-ldap-federation,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-server-spi-private,org.keycloak.keycloak-services,org.keycloak.keycloak-core</Dependencies>
+			           </manifestEntries>
+			       </archive>
+                    <!-- Allows easy changing of the output directory when debugging -->
+                    <outputDirectory>${outputDirectory}</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
