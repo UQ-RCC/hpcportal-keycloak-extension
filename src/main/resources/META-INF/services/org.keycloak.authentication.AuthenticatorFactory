@@ -1,2 +1,2 @@
-au.org.coesra.keycloak.authentication.CoesraCreateUserIfUniqueAuthenticatorFactory
-au.org.coesra.keycloak.authentication.LinkIdpLoginAuthenticatorFactory
+au.org.rcc.keycloak.authentication.LinkIdpLoginAuthenticatorFactory
+au.org.rcc.keycloak.authentication.LinkIdpOnlyAuthenticatorFactory
