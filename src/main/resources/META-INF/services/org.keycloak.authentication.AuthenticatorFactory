@@ -1,2 +1,3 @@
 au.edu.uq.rcc.keycloak.authentication.LinkIdpLoginAuthenticatorFactory
 au.edu.uq.rcc.keycloak.authentication.LinkIdpOnlyAuthenticatorFactory
+au.edu.uq.rcc.keycloak.authentication.LinkIdpUQAuthenticatorFactory
