@@ -22,3 +22,9 @@ dependencies {
 	implementation group: 'org.keycloak', name: 'keycloak-server-spi-private', version: KEYCLOAK_VERSION
 	implementation group: 'org.keycloak', name: 'keycloak-ldap-federation', version: KEYCLOAK_VERSION
 }
+
+jar {
+	manifest {
+		attributes("Dependencies": "org.keycloak.keycloak-ldap-federation,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-server-spi-private,org.keycloak.keycloak-services,org.keycloak.keycloak-core")
+	}
+}
