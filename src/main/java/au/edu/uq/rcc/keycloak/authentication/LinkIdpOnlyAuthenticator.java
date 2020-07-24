@@ -1,4 +1,4 @@
-package au.org.rcc.keycloak.authentication;
+package au.edu.uq.rcc.keycloak.authentication;
 
 import org.jboss.logging.Logger;
 import org.keycloak.authentication.AuthenticationFlowContext;
