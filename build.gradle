@@ -1,0 +1,23 @@
+apply plugin: 'base'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+sourceCompatibility = 11
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	KEYCLOAK_VERSION = '4.5.0.Final'
+}
+
+dependencies {
+	implementation group: 'org.keycloak', name: 'keycloak-core', version: KEYCLOAK_VERSION
+	implementation group: 'org.keycloak', name: 'keycloak-server-spi', version: KEYCLOAK_VERSION
+	implementation group: 'org.keycloak', name: 'keycloak-services', version: KEYCLOAK_VERSION
+	implementation group: 'org.keycloak', name: 'keycloak-server-spi-private', version: KEYCLOAK_VERSION
+	implementation group: 'org.keycloak', name: 'keycloak-ldap-federation', version: KEYCLOAK_VERSION
+}
