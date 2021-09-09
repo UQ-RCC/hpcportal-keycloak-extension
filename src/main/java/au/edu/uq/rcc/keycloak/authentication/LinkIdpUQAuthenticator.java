@@ -66,7 +66,7 @@ public final class LinkIdpUQAuthenticator extends AbstractIdpAuthenticator {
 		});
 		*/
 
-		UserModel user = context.getSession().users().getUserByUsername(username, context.getRealm());
+		UserModel user = context.getSession().users().getUserByUsername(context.getRealm(), username);
 		if(user == null) {
 			context.failure(AuthenticationFlowError.UNKNOWN_USER);
 			return;
