@@ -12,7 +12,7 @@ flow to automatically link an IdP login with an existing user, federated or
 otherwise, without prompting the user.
 
 ## Usage
-1. Download a release jar or build with maven: `mvn package`.
+1. Download a release jar or build with gradle: `./gradlew jar`
 2. Drop the jar into one of the directories defined in the `deployments` folder (/opt/jboss/keycloak/standalone/deployments).
 3. Create or modify an Authentication flow to include the new `Link IDP Login`
    provider in the appropriate place.
