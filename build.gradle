@@ -1,6 +1,16 @@
-apply plugin: 'base'
-apply plugin: 'idea'
+plugins {
+	id 'fr.brouillard.oss.gradle.jgitver' version '0.9.1'
+}
+
 apply plugin: 'java'
+
+jgitver {
+	useDistance true
+	useGitCommitID true
+	useDirty true
+	/* To play nice with literally everything else. */
+	autoIncrementPatch false
+}
 
 sourceCompatibility = 11
 targetCompatibility = 11
